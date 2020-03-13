@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+service MyService {
+    rpc GetUsers(GetUsersRequest) returns (GetUsersResponse) {
+        option (google.api.http) = {
+            post: "/ServiceAssignments/SubscribeToService"
+            body: "*"
+        };
+    }
+}
+
+message GetUsersRequest {
+
+}
+
+message GetUsersResponse {
+    repeated string users = 1;
+}
